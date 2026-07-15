@@ -9,7 +9,7 @@
     <p>This implementation handles extreme jitter and packet loss using a low-overhead hybrid technique:</p>
     <ul>
         <li><strong>XOR Parity (FEC):</strong> Redundancy overhead of exactly 50% (1.5x total baseline bandwidth) covers the vast majority of single-packet drops instantly with zero additional latency.</li>
-        <li><strong>NACK Engine:</strong> If both the primary media frame and the parity block are lost in transit, the receiver requests targeted retransmissions. These requests are safely bounded within the 80ms playout delay window.</li>
+        <li><strong>NACK Engine:</strong> If both the primary media frame and the parity block are lost in transit, the receiver requests targeted retransmissions. These requests are safely bounded within the 120ms playout delay window, giving retransmitted packets enough round-trip time to arrive before their deadlines.</li>
     </ul>
 </body>
 </html>
